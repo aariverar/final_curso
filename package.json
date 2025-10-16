@@ -1,0 +1,46 @@
+{
+  "name": "bluebag-dashboard",
+  "version": "1.0.0",
+  "description": "Dashboard interactivo para análisis de encuesta de mercado - BlueBag (Morrales personalizados con materiales reciclados)",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx http-server -p 8000",
+    "build": "echo 'No build process required for static HTML'",
+    "deploy": "echo 'Deployment handled by GitHub Actions'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aariverar/final_curso.git"
+  },
+  "keywords": [
+    "dashboard",
+    "encuesta",
+    "market-research",
+    "data-visualization",
+    "plotly",
+    "html",
+    "css",
+    "javascript",
+    "sustainability",
+    "bluebag",
+    "upc"
+  ],
+  "author": {
+    "name": "Abraham Rivera",
+    "email": "arivera_scb@santander.com.pe",
+    "organization": "Universidad Peruana de Ciencias - Grupo 3"
+  },
+  "license": "MIT",
+  "homepage": "https://aariverar.github.io/final_curso/",
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

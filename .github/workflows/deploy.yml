@@ -1,0 +1,70 @@
+name: Deploy BlueBag Dashboard to GitHub Pages
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+
+    - name: Build project
+      run: |
+        # No hay proceso de build necesario para HTML estático
+        echo "Preparando archivos para despliegue..."
+        ls -la
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+  # Job adicional para verificar la calidad del código
+  quality-check:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    - name: Validate HTML
+      run: |
+        echo "Validando estructura HTML..."
+        # Verificar que los archivos principales existen
+        if [ ! -f "index.html" ]; then
+          echo "Error: index.html no encontrado"
+          exit 1
+        fi
+        if [ ! -f "styles.css" ]; then
+          echo "Error: styles.css no encontrado"
+          exit 1
+        fi
+        if [ ! -f "script.js" ]; then
+          echo "Error: script.js no encontrado"
+          exit 1
+        fi
+        echo "✅ Todos los archivos principales están presentes"
+        
+    - name: Check file sizes
+      run: |
+        echo "Verificando tamaños de archivos..."
+        du -h *.html *.css *.js 2>/dev/null || true
+        echo "✅ Verificación de tamaños completada"
