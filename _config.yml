@@ -1,0 +1,19 @@
+# BlueBag Dashboard - GitHub Pages Configuration
+
+# Este archivo asegura que GitHub Pages sirva correctamente los archivos estáticos
+# del dashboard de investigación de mercados
+
+# URL del sitio: https://aariverar.github.io/final_curso/
+# Repositorio: https://github.com/aariverar/final_curso
+
+include:
+  - README.md
+  - index.html
+  - styles.css
+  - script.js
+  - package.json
+
+exclude:
+  - .gitignore
+  - "*.xlsx"
+  - "~$*"
