@@ -10,7 +10,7 @@ const colors = {
 // Datos de ejemplo para el gráfico de género
 const testData = {
     gender: {
-        'Masculino': 46,
+        'Masculino': 45,
         'Femenino': 105
     }
 };
@@ -441,7 +441,7 @@ function createPieChart() {
     const edades = {
         '18 – 24 años': 57,
         '25 – 29 años': 40,
-        '30 – 35 años': 54
+        '30 – 35 años': 53
     };
 
     // Configuración de la gráfica
